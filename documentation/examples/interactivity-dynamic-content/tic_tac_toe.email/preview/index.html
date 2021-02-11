@@ -1,0 +1,375 @@
+[% supportedFormats formats=["websites"] %]
+
+
+
+
+
+<!DOCTYPE HTML>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <link rel="shortcut icon" href="/static/img/favicon.png"/>
+
+    <meta name="theme-color" content="#005af0"/>
+
+    <link rel="canonical" href="http://localhost:8081/documentation/examples/interactivity-dynamic-content/tic_tac_toe.email/preview/"/>
+    <link rel="alternate" hreflang="x-default" href="http://localhost:8081/documentation/examples/interactivity-dynamic-content/tic_tac_toe.email/preview/"/>
+
+
+
+
+
+
+
+
+<title>Demo: Tic Tac Toe - amp.dev</title>
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Webpage",
+  "url": "http://localhost:8081/documentation/examples/interactivity-dynamic-content/tic_tac_toe.email/preview/ ",
+  "name": "amp.dev",
+  "headline":"Demo: Tic Tac Toe",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:8080"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AMP Project",
+    "logo": {
+        "url": "http://localhost:8080/static/img/icons/icon-512x512.png",
+        "width": 512,
+        "height": 512,
+        "@type": "ImageObject"
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "http://localhost:8080/static/img/sharing/docs-example-600x314.png",
+    "width": 600,
+    "height": 314
+  }
+}
+</script>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Demo: Tic Tac Toe">
+<meta name="twitter:creator" content="@ampproject">
+<meta name="twitter:site" content="@ampproject">
+<meta name="twitter:image" content="http://localhost:8080/static/img/sharing/docs-example-600x314.png">
+
+<meta property="og:title" content="Demo: Tic Tac Toe">
+<meta property="og:url" content="http://localhost:8081/documentation/examples/interactivity-dynamic-content/tic_tac_toe.email/preview/">
+<meta property="og:image" content="http://localhost:8080/static/img/sharing/docs-example-600x314.png">
+<meta property="og:image:width" content="600">
+<meta property="og:image:height" content="314">
+
+<meta name="supported-amp-formats" content="websites">
+<meta name="page-locale" content="en,de,fr,ar,es,it,id,ja,ko,pt_br,ru,tr,zh_cn,pl,vi">
+    <meta http-equiv="origin-trial" content="AviuuiVhVdQ3GpVtxSpyMT+XsL/qGGYmyiyLvYSKPL3rRDLipe/ard5x+DXVlrATtolwX75VtpSKc9IEzLDd4AkAAABmeyJvcmlnaW4iOiJodHRwczovL2FtcC5kZXY6NDQzIiwiZmVhdHVyZSI6IkV4cGVyaW1lbnRhbEF1dG9wbGF5RHluYW1pY0RlbGVnYXRpb24iLCJleHBpcnkiOjE1NzA1Nzg0NDF9">
+
+    <meta name="viewport" content="width=device-width"/>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <style amp-custom>
+
+      @font-face{font-family:system;font-style:normal;font-weight:300;src:local(".SFNSText-Light"),local(".HelveticaNeueDeskInterface-Light"),local(".LucidaGrandeUI"),local("Ubuntu Light"),local("Segoe UI Light"),local("Roboto-Light"),local("DroidSans"),local("Tahoma")}@font-face{font-family:system;font-style:italic;font-weight:300;src:local(".SFNSText-LightItalic"),local(".HelveticaNeueDeskInterface-Italic"),local(".LucidaGrandeUI"),local("Ubuntu Light Italic"),local("Segoe UI Light Italic"),local("Roboto-LightItalic"),local("DroidSans"),local("Tahoma")}@font-face{font-family:system;font-style:normal;font-weight:400;src:local(".SFNSText-Regular"),local(".HelveticaNeueDeskInterface-Regular"),local(".LucidaGrandeUI"),local("Ubuntu"),local("Segoe UI"),local("Roboto-Regular"),local("DroidSans"),local("Tahoma")}@font-face{font-family:system;font-style:italic;font-weight:400;src:local(".SFNSText-Italic"),local(".HelveticaNeueDeskInterface-Italic"),local(".LucidaGrandeUI"),local("Ubuntu Italic"),local("Segoe UI Italic"),local("Roboto-Italic"),local("DroidSans"),local("Tahoma")}@font-face{font-family:system;font-style:normal;font-weight:500;src:local(".SFNSText-Medium"),local(".HelveticaNeueDeskInterface-MediumP4"),local(".LucidaGrandeUI"),local("Ubuntu Medium"),local("Segoe UI Semibold"),local("Roboto-Medium"),local("DroidSans-Bold"),local("Tahoma Bold")}@font-face{font-family:system;font-style:italic;font-weight:500;src:local(".SFNSText-MediumItalic"),local(".HelveticaNeueDeskInterface-MediumItalicP4"),local(".LucidaGrandeUI"),local("Ubuntu Medium Italic"),local("Segoe UI Semibold Italic"),local("Roboto-MediumItalic"),local("DroidSans-Bold"),local("Tahoma Bold")}@font-face{font-family:system;font-style:normal;font-weight:700;src:local(".SFNSText-Bold"),local(".HelveticaNeueDeskInterface-Bold"),local(".LucidaGrandeUI"),local("Ubuntu Bold"),local("Roboto-Bold"),local("DroidSans-Bold"),local("Segoe UI Bold"),local("Tahoma Bold")}@font-face{font-family:system;font-style:italic;font-weight:700;src:local(".SFNSText-BoldItalic"),local(".HelveticaNeueDeskInterface-BoldItalic"),local(".LucidaGrandeUI"),local("Ubuntu Bold Italic"),local("Roboto-BoldItalic"),local("DroidSans-Bold"),local("Segoe UI Bold Italic"),local("Tahoma Bold")}@font-face{font-family:'Noto Sans';font-style:normal;font-weight:400;font-display:optional;src:local("Noto Sans"),local("NotoSans"),url("https://amp.dev/static/fonts/noto-sans-v7-latin-regular.woff2") format("woff2"),url("https://amp.dev/static/fonts/noto-sans-v7-latin-regular.woff") format("woff")}@font-face{font-family:'Noto Sans';font-style:normal;font-weight:700;font-display:optional;src:local("Noto Sans Bold"),local("NotoSans-Bold"),url("https://amp.dev/static/fonts/noto-sans-v7-latin-700.woff2") format("woff2"),url("https://amp.dev/static/fonts/noto-sans-v7-latin-700.woff") format("woff")}@font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:optional;src:local("Poppins Bold"),local("Poppins-Bold"),url("https://amp.dev/static/fonts/poppins-v5-latin-700.woff2") format("woff2"),url("https://amp.dev/static/fonts/poppins-v5-latin-700.woff") format("woff")}@font-face{font-family:'Fira Mono';font-style:normal;font-weight:400;font-display:optional;src:local("Fira Mono"),local("FiraMono"),url("https://amp.dev/static/fonts/fira-mono-v7-latin-500.woff2") format("woff2"),url("https://amp.dev/static/fonts/fira-mono-v7-latin-500.woff") format("woff")}*{box-sizing:border-box}html,body{padding:0;margin:0;min-width:240px;color:#48525C;background-color:#fff;font-size:16px;font-family:'Noto Sans', system;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;touch-action:manipulation}@media (max-width: 240px){html,body{font-size:14px}}.amp-carousel-button{width:3em;height:3em;border-radius:50%;box-shadow:0 10px 15px 0 rgba(0,0,0,0.4);transition:400ms;background-color:#fff}.amp-carousel-button-prev{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%23005AF0'%3E%3Cpath d='M15 8.25H5.87l4.19-4.19L9 3 3 9l6 6 1.06-1.06-4.19-4.19H15v-1.5z'/%3E%3C/svg%3E")}.amp-carousel-button-next{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%23005AF0' %3E%3Cpath d='M9 3L7.94 4.06l4.19 4.19H3v1.5h9.13l-4.19 4.19L9 15l6-6z'/%3E%3C/svg%3E")}.amp-carousel-button:hover{cursor:pointer;box-shadow:0 20px 30px 0 rgba(0,0,0,0.2);background-color:#fff}:target::before{content:'';display:block;visibility:hidden;height:120px;margin-top:-120px}@media (min-width: 1024px){h1:target::before{height:75px;margin-top:-75px}h2:target::before{height:81px;margin-top:-81px}h3:target::before{height:87px;margin-top:-87px}h4:target::before{height:90px;margin-top:-90px}h5:target::before{height:93px;margin-top:-93px}h6:target::before{height:97px;margin-top:-97px}}h1,h2,h3,h4,h5{margin-top:1.5rem;margin-bottom:.75em;font-family:'Poppins',  system;font-weight:700;line-height:1.2em;color:#20202A}h1{font-size:2.2rem;margin-top:3rem}section.ap--content h1:first-of-type{margin-top:0}@media (min-width: 768px){section.ap--content h1:first-of-type{margin-bottom:2rem}}h2{font-size:1.8rem;margin-top:2rem}h3{font-size:1.414rem;margin-top:1.8rem}h4{font-size:1.2rem}h5{font-size:1rem}.ap--content .intro,.ap--section .intro{font-size:1rem;padding:0}.ap--content .intro *,.ap--section .intro *{font-size:inherit}.ap--content p,.ap--section p{line-height:1.6rem;font-weight:normal;color:#48525C;display:block;margin-top:1.1em;margin-bottom:0;font-size:1rem}.ap--content p small,.ap--section p small{font-size:0.875rem}.ap--content code,.ap--section code{display:inline;padding:2px 4px;font-family:'Fira Mono', monospace;font-weight:500;word-break:normal;color:#000;background-color:#E2E5E6;font-size:0.9em}.ap--content p,.ap--content code,.ap--section p,.ap--section code{overflow-wrap:break-word}.ap--content a,.ap--section a{position:relative;z-index:10}.ap--content a code,.ap--section a code{color:#005AF0;z-index:-1}.ap--content pre,.ap--section pre{font-family:'Fira Mono', monospace;font-weight:500;font-size:1rem;white-space:pre-wrap}.ap--content>ul,.ap--content>ol,.ap--section>ul,.ap--section>ol{line-height:1.6rem;font-weight:normal;color:#48525C;display:block;margin-top:1.1em;margin-bottom:0;padding-left:2em;margin:1.5em 0 1.5em}.ap--content>ul ul,.ap--content>ul ol,.ap--content>ol ul,.ap--content>ol ol,.ap--section>ul ul,.ap--section>ul ol,.ap--section>ol ul,.ap--section>ol ol{padding-left:2em;margin:0}.ap--content>ul li,.ap--content>ol li,.ap--section>ul li,.ap--section>ol li{padding-left:0.5em}.ap--content>ul li p,.ap--content>ol li p,.ap--section>ul li p,.ap--section>ol li p{font-size:1em}.ap--content figure figcaption,.ap--section figure figcaption{line-height:1.6rem;font-weight:normal;color:#48525C;font-size:0.8125rem;margin-top:0.3em}.ap--content hr,.ap--section hr{height:1px;margin:0.75em 0;background-color:#EBEBF0;border:none}.ap-m-lnk{display:flex;align-items:center;text-decoration:none;padding:0 0 1.5em;margin:0}.ap-m-lnk-text{line-height:1.6rem;font-weight:normal;color:#48525C;font-size:0.875rem;font-weight:bold;color:#005AF0;line-height:1.3;transition:transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1)}.ap-m-lnk-icon{fill:#005AF0;padding:0.438em 0;margin-bottom:auto;margin-right:0.625em;box-sizing:initial;transition:transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1)}.ap-m-lnk:hover .ap-m-lnk-text,.ap-m-lnk:hover .ap-m-lnk-icon{transform:translateX(10px)}.ap-m-lnk-square{border-bottom:1px solid #EBEBF0}.ap-m-lnk-square .ap-m-lnk-text{font-size:1rem;font-family:'Poppins',  system;font-weight:700;color:#000;padding-left:10px}.ap-m-lnk-square .ap-m-lnk-icon{width:1.375em;height:1.375em;fill:#fff;background-color:#005AF0;overflow:hidden;padding:0.563em;box-shadow:0 10px 20px 0 rgba(0,0,0,0.25)}.ap-m-lnk-square:hover .ap-m-lnk-icon{box-shadow:0 10px 20px 0 rgba(0,0,0,0.25)}.ap-m-lnk-square:hover .ap-m-lnk-icon svg{animation:0.3s cubic-bezier(0.25, 0.1, 0.25, 1) duepduep}@keyframes duepduep{0%{transform:translate(0, 0)}49%{transform:translate(40px, 0)}50%{transform:translate(-40px, 0)}100%{transform:translate(0, 0)}}a{font-weight:bold;text-decoration:none;color:#005AF0}a code{display:inline;padding:2px 4px;font-family:'Fira Mono', monospace;font-weight:500;word-break:normal;color:#000;background-color:#E2E5E6;font-size:0.9em;color:#005AF0}.ap-a-ico{display:flex;font-size:initial;box-sizing:initial;justify-content:center;width:1em;height:1em}.ap-a-btn{margin-top:1.5rem;margin-bottom:.75em;font-family:'Poppins',  system;font-weight:700;line-height:1.2em;color:#20202A;font-size:1em;color:#fff;display:inline-block;max-width:100%;width:auto;height:auto;padding:0.75em 1.75em;margin:0;text-decoration:none;text-align:center;border-radius:3px;background-color:#005AF0;border:none;cursor:pointer;box-shadow:0 15px 35px -5px rgba(0,0,0,0.25);transition:transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1)}.ap-a-btn:hover{transform:translateY(-0.125em);box-shadow:0 25px 20px -15px rgba(0,0,0,0.15)}@media (min-width: 768px){.ap-a-btn{padding:1em 2em}}.ap-o-consent{right:20px;left:auto;bottom:20px;width:calc(100% - 40px);padding:15px;line-height:1.6rem;font-weight:normal;color:#48525C;font-size:0.875rem;background-color:#fff;box-shadow:0 15px 30px 0px rgba(0,0,0,0.15);border-radius:8px}@media (min-width: 768px){.ap-o-consent{max-width:500px}}.ap-o-consent-close{position:absolute;right:15px;top:15px;-webkit-appearance:none;background-color:transparent;border:none;padding:0}.ap-o-consent-close svg{width:10px;height:10px}.ap-o-consent button{cursor:pointer}.ap-m-device-toggle{text-align:center;line-height:0}.ap-m-device-toggle-button{-webkit-appearance:none;background-color:transparent;border:none;padding:0;cursor:pointer}.ap-m-device-toggle-icon{width:28px;height:28px;margin:0 6px;stroke:#91979D;fill:#91979D}.active .ap-m-device-toggle-icon{stroke:#005AF0;fill:#005AF0}.ap--preview-pane{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-height:calc(100vh - 60px)}@media (max-width: 767px){.ap--preview-pane{flex-direction:column-reverse}}.ap--preview-pane-header{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1460px;padding:5px 15px}@media (max-width: 767px){.ap--preview-pane-header{padding-left:0;padding-right:0}}.ap--preview-pane-header-spacer{flex:1 0 33.3333%}@media (max-width: 767px){.ap--preview-pane-header-spacer{display:none}}.ap--preview-pane-header .ap-m-device-toggle{flex:0 0 180px}@media (max-width: 767px){.ap--preview-pane-header .ap-m-device-toggle{display:none}}.ap--preview-pane-header .ap-m-experiments{flex:1 0 33.3333%;padding:0;margin:0;background:none}.ap-o-preview-pane{position:relative;display:flex;flex-direction:column;padding:5px;box-shadow:0 30px 30px -15px rgba(0,0,0,0.1);border:1px rgba(0,0,0,0.1) solid;background:#fff;transform-origin:top}.ap-o-preview-pane iframe{height:100%}.ap-o-preview-pane-device{position:relative;display:flex;flex-direction:column;flex:1 0 auto}.ap-o-preview-pane-mobile{width:411px;height:731px}@media (max-height: 896px){.ap-o-preview-pane-mobile{transform:scale(0.9)}}@media (max-height: 810px){.ap-o-preview-pane-mobile{transform:scale(0.85)}}@media (max-height: 786px){.ap-o-preview-pane-mobile{transform:scale(0.8)}}@media (max-height: 719px){.ap-o-preview-pane-mobile{transform:scale(0.65)}}.ap-o-preview-pane-tablet{width:768px;height:1026px;transform:scale(0.8)}@media (max-height: 896px){.ap-o-preview-pane-tablet{transform:scale(0.7)}}@media (max-height: 810px){.ap-o-preview-pane-tablet{transform:scale(0.6)}}@media (max-height: 786px){.ap-o-preview-pane-tablet{transform:scale(0.5)}}@media (max-height: 719px){.ap-o-preview-pane-tablet{transform:scale(0.4)}}.ap-o-preview-pane-desktop{width:90vw;height:calc(90vh - 200px)}.ap-o-preview-pane-email-header{display:flex;margin:-5px;padding:5px;box-shadow:0 5px 8px 0px rgba(0,0,0,0.075);justify-content:space-between;align-items:center}.ap-o-preview-pane-email-header .avatar{width:166px;height:50px;margin-left:0}.ap-o-preview-pane-email-header .reply{width:33px;height:23px;margin-right:0}.ap-o-preview-pane-email.ap-o-preview-pane-desktop{width:800px;height:600px}.ap-o-preview-pane-ads.ap-o-preview-pane{margin-top:20px}@media (max-width: 767px){.ap-o-preview-pane{width:calc(100vw);height:calc(100vh - 131px);transform:none}}.ap-o-search{z-index:9999}.ap-o-search-escaper{position:fixed;left:0;top:0;right:0;bottom:0;opacity:0.6;background:#000}.ap-o-search-container{position:relative;width:90vw;padding:23px 0 0;margin:0;background:#FAFAFC;box-shadow:0 2px 50px 0 rgba(0,0,0,0.5)}@media (min-width: 1024px){.ap-o-search-container{width:100%;max-width:900px;padding:32px 60px 0;margin:0 auto}}@media (min-width: 1280px){.ap-o-search-container{max-width:1060px;padding:32px 140px 0}}@media (min-width: 1440px){.ap-o-search-container{max-width:1200px;padding:32px 210px 0}}.ap-o-search-form{position:relative;z-index:2}.ap-o-search-autocomplete{width:100%}@media (max-width: 1023px){.ap-o-search-autocomplete{width:calc(100% - 40px);left:15px}}.ap-o-search-autocomplete div[role="listbox"]{width:100%;max-height:210px;margin-top:-4px;margin-left:0;border-radius:0 0 4px 4px;box-shadow:0 15px 20px 0 rgba(0,0,0,0.1)}.ap-o-search-autocomplete div[role="listbox"]:not(:empty)::before{content:'';display:block;position:sticky;position:-webkit-sticky;left:10px;top:0;width:calc(100% - 20px);height:1px;background:#CECED2;z-index:1}@media (min-width: 1024px){.ap-o-search-autocomplete div[role="listbox"]:not(:empty)::before{left:60px;width:calc(100% - 90px)}}.ap-o-search-autocomplete div[role="option"]{padding:14px 60px;font-family:'Poppins',  system;font-weight:700;color:#20202A}@media (max-width: 1023px){.ap-o-search-autocomplete div[role="option"]{padding:14px 40px}}.ap-o-search-autocomplete div[role="option"]:hover,.ap-o-search-autocomplete div[role="option"][aria-selected="true"]{color:#005AF0;background:none}.ap-o-search-input{margin-top:1.5rem;margin-bottom:.75em;font-family:'Poppins',  system;font-weight:700;line-height:1.2em;color:#20202A;font-size:1.8rem;margin-top:2rem;line-height:1.4em;width:100%;padding:18px 160px 18px 60px;margin:0;border:none;border-radius:4px;background:transparent}@media (max-width: 1023px){.ap-o-search-input{font-size:1.125rem;padding:20px 20px 20px 40px}}.ap-o-search-input::-webkit-input-placeholder{color:#CECED2}.ap-o-search-input::-moz-placeholder{color:#CECED2}.ap-o-search-input:focus{outline:none;background:#fff;box-shadow:0 15px 20px 0 rgba(0,0,0,0.1)}.ap-o-search-input-icon{position:absolute;left:30px;top:32px;width:17px;height:17px}@media (max-width: 1023px){.ap-o-search-input-icon{width:18px;height:18px;left:11px;top:23px}}.ap-o-search-submit{margin-top:1.5rem;margin-bottom:.75em;font-family:'Poppins',  system;font-weight:700;line-height:1.2em;color:#20202A;font-size:1em;color:#fff;display:inline-block;max-width:100%;width:auto;height:auto;padding:0.75em 1.75em;margin:0;text-decoration:none;text-align:center;border-radius:3px;background-color:#005AF0;border:none;cursor:pointer;box-shadow:0 15px 35px -5px rgba(0,0,0,0.25);transition:transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);opacity:0;pointer-events:none;position:absolute;top:11px;right:10px;box-shadow:none}.ap-o-search-submit:hover{transform:translateY(-0.125em);box-shadow:0 25px 20px -15px rgba(0,0,0,0.15)}@media (min-width: 768px){.ap-o-search-submit{padding:1em 2em}}@media (min-width: 768px){.ap-o-search-submit{padding:0.75em 1.75em}}@media (min-width: 1024px){.ap-o-search-submit{top:13px;right:30px;padding:1em 2em}}.ap-o-search-submit:hover{box-shadow:none}.ap-o-search-submit[disabled]{background-color:#E2E5E6;transform:none}@media (min-width: 1024px){.ap-o-search-submit:focus,.ap-o-search-input:focus+.ap-o-search-submit{opacity:1;pointer-events:auto}}.ap-o-search-result{overflow-x:hidden;overflow-y:auto;height:100vh;min-height:60vh;max-height:calc(100vh - 88px);padding:0 0 30px;-webkit-overflow-scrolling:touch;outline:none}@media (min-width: 1024px){.ap-o-search-result{max-height:calc(100vh - 108px);margin-right:30px}.ap-o-search-result::-webkit-scrollbar{width:6px;height:6px}.ap-o-search-result::-webkit-scrollbar-thumb{border-radius:3px;background-color:#91979D}.ap-o-search-result::-webkit-scrollbar-corner{background-color:transparent}.ap-o-search-result::-webkit-scrollbar-thumb{background:#E2E5E6}}.ap-o-search-result::before{content:'';display:block;height:2em;position:sticky;position:-webkit-sticky;top:0;background:linear-gradient(0deg, rgba(250,250,252,0) 0%, #FAFAFC 100%);z-index:1}.ap-o-search-result .amp-active{position:relative;height:60vh}.ap-o-search-result-list:last-child .ap-o-search-result-item:last-child{margin-bottom:30px}.ap-o-search-result-list .ap-o-search-result-hint{margin-top:30px}.ap-o-search-result-category{padding:30px 0 0;margin:1.5rem 25px 10px;color:#CECED2;border-top:1px solid #CECED2}@media (min-width: 1024px){.ap-o-search-result-category{margin:1.5rem 60px 10px}}.ap-o-search-result-category:first-child{margin-top:0;padding:0;border:none}.ap-o-search-result-item{margin:0 10px;border-radius:4px}@media (min-width: 1024px){.ap-o-search-result-item{margin:0 45px}}@media (min-width: 1024px){.ap-o-search-result-item:hover{background:#fff;box-shadow:0 15px 20px 0 rgba(0,0,0,0.1)}}@media (max-width: 1023px){.ap-o-search-result-item-highlight{margin:10px 25px;background:#fff;box-shadow:0 15px 20px 0 rgba(0,0,0,0.1)}}.ap-o-search-result-item:hover .ap-o-search-result-linklist,.ap-o-search-result-item .ap-o-search-result-link:focus .ap-o-search-result-linklist{opacity:1}.ap-o-search-result-item:focus-within .ap-o-search-result-linklist{opacity:1}.ap-o-search-result-link{display:block;padding:15px;line-height:1.6rem;font-weight:normal;color:#48525C}.ap-o-search-result-linklist{display:flex;justify-content:flex-end;padding:0 0 5px;margin:0 15px;border-top:1px solid #E8E8E9}@media (min-width: 1024px){.ap-o-search-result-linklist{padding:0;margin-top:-15px;border:none;opacity:0}}.ap-o-search-result-linklist-item{padding:0}@media (min-width: 1024px){.ap-o-search-result-linklist-item{padding-bottom:5px;margin-right:1.5rem}}.ap-o-search-result-linklist-item .ap-m-lnk-text{font-size:.75rem}.ap-o-search-result-linklist-item .ap-m-lnk-icon{width:12px;height:12px;margin-right:5px}.ap-o-search-result-linklist-item svg{width:100%}@media (max-width: 1023px){.ap-o-search-result-linklist-item-playground{display:none}}.ap-o-search-result-title{margin:0;font-size:1rem;color:#005AF0}.ap-o-search-result-description{font-size:.875rem;line-height:1.6;margin:0}.ap-o-search-result-load-button{display:flex;justify-content:center;margin-bottom:2rem}.ap-o-search-result-load-button .ap-a-btn{padding:.5rem 2rem;font-size:.875rem;color:#005AF0;border:2px solid #005AF0;background:transparent;box-shadow:none;opacity:.6}.ap-o-search-result-load-button .ap-a-btn:hover{transform:none;opacity:1}.amp-notsupported .ap-o-search-result-load-button{display:none}.ap-o-search-result-hint{padding:0 25px;font-size:.75rem}@media (min-width: 1024px){.ap-o-search-result-hint{padding:0 60px}}.ap-o-search-result-error{padding:14vh 15px 0;text-align:center}.ap-o-search-result-error-smiley,.ap-o-search-result-error-shruggie{margin-top:1.5rem;margin-bottom:.75em;font-family:'Poppins',  system;font-weight:700;line-height:1.2em;color:#20202A;font-size:16vw;margin:0;color:#EBEBF0}@media (min-width: 768px){.ap-o-search-result-error-smiley,.ap-o-search-result-error-shruggie{font-size:13vw}}@media (min-width: 1024px){.ap-o-search-result-error-smiley,.ap-o-search-result-error-shruggie{font-size:100px}}.ap-o-search-result-error-shruggie{font-family:Arial, Helvetica, sans-serif}.ap-o-search-result-error-copy{margin:0 0 2em}.ap-o-search .empty{overflow:hidden;height:0}.ap-a-sample-preview-title{position:absolute;width:100%;height:100%;top:0;left:60px;display:flex;padding:14px 60px 10px 0;margin:0;white-space:nowrap;align-items:center;justify-content:flex-start;font-size:1em;font-family:'Poppins',  system;font-weight:700;background:#fff}@media (min-width: 768px){.ap-a-sample-preview-title{left:0;padding:14px 0 10px;justify-content:center;font-size:1.5em;background:transparent}}@media (min-width: 1024px){.ap-a-sample-preview-title{font-size:1.125rem}}@media (max-width: 767px){.ap-a-sample-preview-title-prefix{display:none}}.ap-a-sample-preview-title-title{overflow:hidden;text-overflow:ellipsis;max-width:calc(100vw - 120px)}.ap-a-sample-preview-title-close{margin:0 10px 0 auto;width:20px;height:20px}@media (min-width: 768px){.ap-a-sample-preview-title-close{display:none}}.ap-m-homepage-link{position:relative;margin-left:auto;margin-right:0;padding-bottom:10px;font-family:'Poppins',  system;font-weight:700}@media (min-width: 1024px){.ap-m-homepage-link{margin-right:0;padding-right:30px;font-size:1.125rem}}@media (max-width: 1023px){.ap-m-homepage-link{display:none}}.ap-m-homepage-link .icon{display:inline-block;width:9pt;height:9pt;margin:0 auto;transform:rotate(-90deg);fill:#91979D}.ap-m-homepage-link .icon:hover{fill:#005AF0}.ap--header{width:100%;max-width:2020px;margin:0 auto;position:-webkit-sticky;position:sticky;top:0;z-index:1001;background-color:#fff;box-shadow:0 2px 10px 0 rgba(0,0,0,0.07)}.ap--header.mainmenuopen{z-index:1004}.ap--header.mainmenuopen ~ .ap--main{max-width:100vw;overflow-x:hidden}@media (min-width: 1024px){.ap--header{top:0px}.ap--header.has-banner{top:-31px}}.ap-o-header{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;max-width:1460px;padding:10px 0 0 20px;margin:0 auto}@media (min-width: 1024px){.ap-o-header{display:flex;padding-left:30px}}.ap-o-header-home{position:-webkit-sticky;position:sticky;top:10px;display:flex;align-items:center;margin-right:auto;padding-bottom:10px;overflow:hidden}.ap-o-header-home-logo{height:30px;margin-right:6px;width:30px}.ap-o-header-home-title,.ap-o-header-home-sub-title{margin-left:4px;font-family:'Poppins',  system;font-weight:700;font-size:1.5em;color:#005AF0}@media (min-width: 1024px){.ap-o-header-home-title,.ap-o-header-home-sub-title{font-size:1.125rem}}.ap-o-header-home-sub-title{color:#000;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.ap-o-header-main{display:none;flex:1 1 auto;padding:0 30px}@media (min-width: 1024px){.ap-o-header-main{display:flex}}.ap-o-header-main-item{position:relative;display:flex;align-items:center;margin:0 18px -5px}.ap-o-header-main-link{display:flex;align-items:center;padding:0 0 14px 0;border:0;background:none}.ap-o-header-main-link-icon{font-size:8px;margin-left:5px;transform:rotate(0deg);transition:transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1)}.ap-o-header-main-link:hover ~ .ap-o-header-flyout,.ap-o-header-main-link:focus ~ .ap-o-header-flyout,.ap-o-header-flyout:hover{opacity:1;pointer-events:all;transition:opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1)}.ap-o-header-flyout:focus-within{opacity:1;pointer-events:all;transition:opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1)}.ap-o-header-flyout{box-shadow:0 10px 25px 0 rgba(0,0,0,0.2);position:absolute;top:95%;left:0;margin:0;padding:0 0 10px;pointer-events:none;opacity:0;list-style:none;background:#fff;border-radius:0 0 4px 4px;transition:opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1)}.ap-o-header-flyout:before{content:"";display:block;background:linear-gradient(to bottom, rgba(0,0,0,0.07) 0%, rgba(255,255,255,0.07) 100%);height:8px;margin-bottom:10px}.ap-o-header-flyout-item-secondary{margin:20px 0;white-space:nowrap;min-width:200px}.ap-o-header-flyout-item-secondary a:hover{color:#005AF0}.ap-o-header-flyout-item-title{line-height:1.6rem;font-weight:normal;color:#48525C;font-size:0.875rem;font-weight:bold;font-family:'Poppins',  system;font-weight:700;color:#000;line-height:1.4em}.ap-o-header-flyout-item-title.secondary{padding:0 15px}.ap-o-header-flyout-item-description{line-height:1.6rem;font-weight:normal;color:#48525C;font-size:0.8125rem;opacity:0.75;line-height:1.25em}.ap-o-header-flyout-primary-item{position:relative;width:300px}.ap-o-header-flyout-primary-item:hover .ap-o-header-flyout-primary-item-link{box-shadow:0 10px 25px 0 rgba(0,0,0,0.2);background-color:#005AF0}.ap-o-header-flyout-primary-item:hover .ap-o-header-flyout-primary-item-link-info>*{color:#fff}.ap-o-header-flyout-primary-item:hover .ap-o-header-flyout-primary-item-link-info-stories .ap-o-header-flyout-item-title{color:#20202A}.ap-o-header-flyout-primary-item:hover .ap-o-header-flyout-primary-item-link-info-stories .ap-o-header-flyout-item-description{color:#20202A}.ap-o-header-flyout-primary-item:hover .ap-o-header-flyout-primary-item-link-info-email .ap-o-header-flyout-item-title{color:#20202A}.ap-o-header-flyout-primary-item:hover .ap-o-header-flyout-primary-item-link-info-email .ap-o-header-flyout-item-description{color:#20202A}.ap-o-header-flyout-primary-item:hover .ap-o-header-flyout-primary-item-link-icon{fill:#fff}.ap-o-header-flyout-primary-item:hover .ap-o-header-flyout-primary-item-link-icon.stories{fill:#20202A}.ap-o-header-flyout-primary-item:hover .ap-o-header-flyout-primary-item-link-icon.email{fill:#20202A}.ap-o-header-flyout-primary-item:hover .ap-o-header-flyout-primary-item-link.websites{background:linear-gradient(225deg, #00DCC0 0%, #005AF0 75%)}.ap-o-header-flyout-primary-item:hover .ap-o-header-flyout-primary-item-link.stories{background:linear-gradient(225deg, #EC6600 0%, #FFDC00 75%)}.ap-o-header-flyout-primary-item:hover .ap-o-header-flyout-primary-item-link.ads{background:linear-gradient(225deg, #EB49E1 0%, #5500D7 75%)}.ap-o-header-flyout-primary-item:hover .ap-o-header-flyout-primary-item-link.email{background:linear-gradient(225deg, #09A600 0%, #E1EB64 75%)}.ap-o-header-flyout-primary-item-link{display:flex;align-items:center;border-radius:4px;padding:10px;margin:0 5px}.ap-o-header-flyout-primary-item-link-info{margin:0 20px 0 15px}.ap-o-header-flyout-primary-item-link-icon{display:flex;font-size:initial;box-sizing:initial;justify-content:center;width:2em;height:2em}.ap-o-header-flyout-primary-item-link-icon.websites{fill:url(#gradient-websites) #000}.ap-o-header-flyout-primary-item-link-icon.stories{fill:url(#gradient-stories) #000}.ap-o-header-flyout-primary-item-link-icon.ads{fill:url(#gradient-ads) #000}.ap-o-header-flyout-primary-item-link-icon.email{fill:url(#gradient-email) #000}#blm-banner{background:#111;color:#eee;display:block;text-align:center;padding:0.5em}body{top:0;left:0;background-repeat:no-repeat;background-size:100% auto;background-position:top right;background-attachment:fixed}body.ap--websites{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 768'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='239.67' y1='855.23' x2='606.28' y2='-152.04' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23fff' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23d5e6f2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg%3E%3Cpath fill='url(%23a)' d='M0 0h1024v214L786.37 768H0V0z'/%3E%3C/g%3E%3C/svg%3E%0A")}body.ap--ads{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 768'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='239.67' x2='606.28' y1='855.23' y2='-152.04' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23fff' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23ddd3eb'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg%3E%3Cpath fill='url(%23a)' d='M0 0h1024v214L786.37 768H0V0z'/%3E%3C/g%3E%3C/svg%3E%0A")}body.ap--stories{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 768'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='239.67' x2='606.28' y1='855.23' y2='-152.04' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23fff' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23ebdfd3'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg%3E%3Cpath fill='url(%23a)' d='M0 0h1024v214L786.37 768H0V0z'/%3E%3C/g%3E%3C/svg%3E%0A")}body.ap--email{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 768'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='239.67' x2='606.28' y1='855.23' y2='-152.04' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23fff' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23d7ebd3'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg%3E%3Cpath fill='url(%23a)' d='M0 0h1024v214L786.37 768H0V0z'/%3E%3C/g%3E%3C/svg%3E%0A")}
+    </style>
+    <link rel="manifest" href="/manifest.json">
+
+    <script custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js" async></script>
+  </head>
+  <body class="[= 'ap--' + format if format =]">
+	  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <symbol id="device-desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 52"><path d="M6 2h44a4 4 0 0 1 4 4v28.842a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm22 36.842v10.526-10.526zM17.6 49.368h20.8-20.8z" stroke-width="4" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="device-tablet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 54" ><g transform="translate(2 2)" fill="none" fill-rule="evenodd"><rect stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="rotate(180 20 25)" width="40" height="50" rx="4"/><path d="M18.333 40h3.333v3.333h-3.333z"/></g></symbol><symbol id="device-mobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 44"><g transform="translate(2 2)" fill="none" fill-rule="evenodd"><rect stroke-width="4" stroke-linecap="round" stroke-linejoin="round" width="28" height="40" rx="4"/><path d="M12 30h4v4h-4z"/></g></symbol><symbol id="internal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M43.16 10.18c-0.881-0.881-2.322-0.881-3.203 0s-0.881 2.322 0 3.203l16.335 16.335h-54.051c-1.281 0-2.242 1.041-2.242 2.242 0 1.281 0.961 2.322 2.242 2.322h54.051l-16.415 16.335c-0.881 0.881-0.881 2.322 0 3.203s2.322 0.881 3.203 0l20.259-20.259c0.881-0.881 0.881-2.322 0-3.203l-20.179-20.179z"></path></symbol><symbol id="magnifier" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M61.925 58.24l-15.2-15.84c3.92-4.64 6.080-10.48 6.080-16.64-0.080-14.16-11.6-25.76-25.84-25.76s-25.84 11.6-25.84 25.84 11.6 25.84 25.84 25.84c5.36 0 10.4-1.6 14.8-4.64l15.36 15.92c0.64 0.64 1.52 1.040 2.4 1.040s1.68-0.32 2.32-0.96c1.36-1.28 1.36-3.44 0.080-4.8zM26.965 6.72c10.56 0 19.12 8.56 19.12 19.12s-8.64 19.040-19.12 19.040-19.12-8.56-19.12-19.040 8.56-19.12 19.12-19.12z"></path></symbol><symbol id="angle-down-solid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path d="M56.293 16.003c1.761-1.645 4.553-1.645 6.314 0 1.857 1.734 1.857 4.623 0 6.357l-27.45 25.638c-1.761 1.645-4.553 1.645-6.314 0l-27.45-25.638c-0.899-0.839-1.393-1.963-1.393-3.178s0.494-2.339 1.393-3.178c1.761-1.645 4.553-1.645 6.314 0l24.293 22.689 24.293-22.689z"></path>
+</symbol><symbol id="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <path d="M39.503 32l22.963-22.963c2.046-2.046 2.046-5.457 0-7.503s-5.456-2.046-7.503 0l-22.963 22.963-22.963-22.963c-2.046-2.046-5.457-2.046-7.503 0s-2.046 5.457 0 7.503l22.963 22.963-22.963 22.963c-2.046 2.046-2.046 5.456 0 7.503s5.457 2.046 7.503 0l22.963-22.963 22.963 22.963c2.046 2.046 5.456 2.046 7.503 0s2.046-5.456 0-7.503l-22.963-22.963z"></path>
+</symbol><symbol id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><g fill="none" fill-rule="evenodd"><path fill="#FFF" d="M0 15c0 8.284 6.716 15 15 15 8.285 0 15-6.716 15-15 0-8.284-6.715-15-15-15C6.716 0 0 6.716 0 15z"/><path fill="#005AF0" fill-rule="nonzero" d="M13.85 24.098h-1.14l1.128-6.823-3.49.005h-.05a.57.57 0 0 1-.568-.569c0-.135.125-.363.125-.363l6.272-10.46 1.16.005-1.156 6.834 3.508-.004h.056c.314 0 .569.254.569.568 0 .128-.05.24-.121.335L13.85 24.098zM15 0C6.716 0 0 6.716 0 15c0 8.284 6.716 15 15 15 8.285 0 15-6.716 15-15 0-8.284-6.715-15-15-15z"/></g></symbol>
+      </defs>
+    </svg>
+
+<header class="ap--header">
+  <div class="ap-o-header">
+    <a class="ap-o-header-home" href="/">
+      <svg class="ap-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+      <span class="ap-o-header-home-title">AMP</span>
+    </a>
+
+    <h1 class="ap-a-sample-preview-title">
+      <span class="ap-a-sample-preview-title-prefix">Preview:&nbsp;</span>
+      <span class="ap-a-sample-preview-title-title">Tic Tac Toe</span>
+      <a class="ap-a-sample-preview-title-close" href="/documentation/examples/interactivity-dynamic-content/tic_tac_toe.email/">
+        <svg class="ap-a-ico icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+      </a>
+    </h1>
+
+    <a class="ap-m-homepage-link" href="/documentation/examples/interactivity-dynamic-content/tic_tac_toe.email/#asd">
+      <span>Back to sample</span>
+      <svg class="ap-a-ico icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+    </a>
+  </div>
+</header>
+
+
+
+
+
+<amp-state id="query" src="http://localhost:8080/search/latest-query"></amp-state>
+<amp-state id="clear" [src]="clear ? 'http://localhost:8080/search/clear-latest-query' : ''"></amp-state>
+
+<amp-lightbox id="searchLightbox"
+              class="ap-o-search"
+              layout="nodisplay"
+              on="lightboxOpen:searchInput.focus,AMP.setState({clear: false});
+                  lightboxClose:searchTriggerOpen.focus"
+              scrollable>
+  <div class="ap-o-search-escaper" role="button" tabindex="0" on="tap:searchLightbox.close"></div>
+  <div class="ap-o-search-container">
+
+    <div class="ap-m-search-trigger ap-m-search-trigger-close"
+         on="tap:searchLightbox.close,AMP.setState({clear: true, query: null})"
+         role="button"
+         tabindex="0">
+      <div class="ap-a-ico ap-m-search-trigger-icon">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+      </div>
+    </div>
+
+    <div class="ap-o-search-field">
+      <form action-xhr="http://localhost:8080/documentation/examples/api/echo"
+            class="ap-o-search-form"
+            id="searchForm"
+            method="POST"
+            on="submit:AMP.setState({ query: throttledValue }),searchResult.focus,searchList.changeToLayoutContainer"
+            target="_top">
+        <amp-autocomplete class="ap-o-search-autocomplete"
+                          filter="substring"
+                          min-characters="1"
+                          on="select:AMP.setState({ query: event.value })"
+                          submit-on-enter="false"
+                          src="http://localhost:8080/search/autosuggest"
+        >
+          <div class="ap-a-ico ap-o-search-input-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#magnifier"></use></svg>
+          </div>
+          <input id="searchInput"
+                 class="ap-o-search-input"
+                 name="q"
+                 placeholder="What are you looking for?"
+                 on="input-throttled:AMP.setState({ throttledValue: event.value })"
+                 [value]="query == null ? '' : query"
+                 required
+          >
+          <button class="ap-o-search-submit" type="submit" name="search-submit" disabled [disabled]="!throttledValue">Search</button>
+        </amp-autocomplete>
+      </form>
+
+      <div class="ap-o-search-result" id="searchResult" tabindex="-1">
+        <amp-state id="search"
+                  src="http://localhost:8080/search/highlights?locale=en"
+                  [src]="query == null || clear ? 'http://localhost:8080/search/highlights?locale=en' : 'http://localhost:8080/search/do?q=' + encodeURIComponent(query) + '&locale=en'"></amp-state>
+        <amp-list id="searchList"
+                  src="http://localhost:8080/search/highlights?locale=en"
+                  [src]="query == null || clear ? 'http://localhost:8080/search/highlights?locale=en' : 'http://localhost:8080/search/do?q=' + encodeURIComponent(query) + '&locale=en'"
+                  binding="no"
+                  items="."
+                  height="80vh"
+                  layout="fixed-height"
+                  load-more="auto"
+                  load-more-bookmark="nextUrl"
+                  reset-on-refresh
+                  single-item
+        >
+
+          <template type="amp-mustache" id="searchResultTemplate">
+            <div class="ap-o-search-result-list">
+              {{^prevUrl}}
+              {{#result.components.length}}
+              <h4 class="ap-o-search-result-category">{{#initial}}Important Components{{/initial}}{{^initial}}Components{{/initial}}</h4>
+              {{/result.components.length}}
+              {{/prevUrl}}
+              {{#result.components}}
+              <div class="ap-o-search-result-item ap-o-search-result-item-highlight">
+                <a class="ap-o-search-result-link" href="{{url}}">
+                  <h4 class="ap-o-search-result-title">{{#initial}}&lt;{{title}}&gt;{{/initial}}{{^initial}}{{title}}{{/initial}}</h4>
+                  <p class="ap-o-search-result-description">{{description}}</p>
+                </a>
+                {{#exampleUrl}}
+                <div class="ap-o-search-result-linklist">
+                  <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{exampleUrl}}">
+                    <div class="ap-a-ico ap-m-lnk-icon">
+                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+                    </div>
+                    <span class="ap-m-lnk-text">Open example</span>
+                  </a>
+                  {{#playgroundUrl}}
+                  <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk" href="{{playgroundUrl}}" target="_blank">
+                    <div class="ap-a-ico ap-m-lnk-icon">
+                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+                    </div>
+                    <span class="ap-m-lnk-text">Open in playground</span>
+                  </a>
+                  {{/playgroundUrl}}
+                </div>
+                {{/exampleUrl}}
+              </div>
+              {{/result.components}}
+
+              {{^prevUrl}}
+              {{#result.pages.length}}
+              <h4 class="ap-o-search-result-category">{{#initial}}Popular Articles{{/initial}}{{^initial}}Results{{/initial}}</h4>
+              {{/result.pages.length}}
+              {{/prevUrl}}
+              {{#result.pages}}
+              <div class="ap-o-search-result-item">
+                <a class="ap-o-search-result-link" href="{{url}}">
+                  <h4 class="ap-o-search-result-title">{{title}}</h4>
+                  <p class="ap-o-search-result-description">{{description}}</p>
+                </a>
+              </div>
+              {{/result.pages}}
+
+              {{#result.isTruncated}}
+              <div class="ap-o-search-result-hint">
+                Although there are {{result.totalResults}} hits in total we cannot show more than 100.
+              </div>
+              {{/result.isTruncated}}
+            </div>
+          </template>
+
+          <amp-list-load-more load-more-button>
+            <div class="ap-o-search-result-load-button" overflow>
+              <button class="ap-a-btn">Load more</button>
+            </div>
+          </amp-list-load-more>
+
+          <amp-list-load-more class="ap-o-search-result-hint" load-more-failed>
+            Something went wrong while trying to load more search results.<br>
+            We apologize for the inconvenience caused.<br>
+            Please try again later.
+          </amp-list-load-more>
+
+          <div class="ap-o-search-result-error" fallback>
+            <h2 class="ap-o-search-result-error-smiley">;(</h2>
+            <h3 class="ap-o-search-result-error-headline">Something went wrong…</h3>
+            <p class="ap-o-search-result-error-copy">
+              …while trying to load the search results.<br>
+              We apologize for the inconvenience caused.<br>
+              Please try again later.
+            </p>
+          </div>
+        </amp-list>
+
+        <div class="ap-o-search-result-error" [hidden]="search.initial == true || search.result.totalResults != 0" hidden>
+          <h2 class="ap-o-search-result-error-shruggie">¯\_(ツ)_/¯</h2>
+          <h3 class="ap-o-search-result-error-headline">No results found.</h3>
+          <p class="ap-o-search-result-error-copy">We could not find any results matching your search query.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</amp-lightbox>
+<main class="ap--preview-pane">
+  <div class="ap--preview-pane-header">
+    <div class="ap--preview-pane-header-spacer"></div>
+
+    <div class="ap-m-device-toggle">
+
+      <button class="ap-m-device-toggle-button active" [class]="device.selected == 'mobile' ? 'ap-m-device-toggle-button active' : 'ap-m-device-toggle-button'" on="tap:AMP.setState({device: {selected: 'mobile'}})">
+        <svg class="ap-a-ico ap-m-device-toggle-icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#device-mobile"></use>
+        </svg>
+      </button>
+      <button class="ap-m-device-toggle-button " [class]="device.selected == 'tablet' ? 'ap-m-device-toggle-button active' : 'ap-m-device-toggle-button'" on="tap:AMP.setState({device: {selected: 'tablet'}})">
+        <svg class="ap-a-ico ap-m-device-toggle-icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#device-tablet"></use>
+        </svg>
+      </button>
+      <button class="ap-m-device-toggle-button " [class]="device.selected == 'desktop' ? 'ap-m-device-toggle-button active' : 'ap-m-device-toggle-button'" on="tap:AMP.setState({device: {selected: 'desktop'}})">
+        <svg class="ap-a-ico ap-m-device-toggle-icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#device-desktop"></use>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+
+  <div class="ap-o-preview-pane ap-o-preview-pane-websites ap-o-preview-pane-mobile" [class]="'ap-o-preview-pane ap-o-preview-pane-websites ap-o-preview-pane-' + device.selected" >
+
+    <div class="ap-o-preview-pane-device">
+      <amp-iframe layout="fill" sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation" allowfullscreen allowpaymentrequest frameborder="0" src="http://localhost:8084/documentation/examples/interactivity-dynamic-content/tic_tac_toe.email">
+        <div placeholder=""></div>
+      </amp-iframe>
+    </div>
+  </div>
+</main>
+
+<amp-state id="device">
+  <script type="application/json">
+    {
+      "selected": "mobile"
+    }
+  </script>
+</amp-state>
+
+
+
+
+
+
+
+
+
+
+
+
+<amp-analytics type="gtag" data-credentials="include" data-block-on-consent>
+  <script type="application/json">
+    {"triggers": {"banner": {"on": "click", "selector": "#top-banner", "vars": {"event_action": "click", "event_category": "examples", "event_label": "banner", "event_name": "banner"}}, "breadcrumbLink": {"on": "click", "selector": ".ap-m-breadcrumbs-crumb", "vars": {"event_action": "link", "event_category": "examples", "event_label": "breadcrumbs", "event_name": "breadcrumbs"}}, "formatToggle": {"on": "click", "selector": ".ap-m-format-toggle-link", "vars": {"event_action": "link", "event_category": "examples", "event_label": "format-toggle", "event_name": "format-toggle"}}, "navigation": {"on": "click", "selector": ".ap--header a, .ap-o-burger-menu-link", "vars": {"event_action": "link", "event_category": "examples", "event_label": "navigation", "event_name": "navigation"}}, "scrolledEnd": {"on": "scroll", "scrollSpec": {"verticalBoundaries": [90]}, "vars": {"event_action": "end", "event_category": "examples", "event_label": "scroll", "event_name": "scroll"}}, "scrolledHalf": {"on": "scroll", "scrollSpec": {"verticalBoundaries": [50]}, "vars": {"event_action": "half", "event_category": "examples", "event_label": "scroll", "event_name": "scroll"}}, "searchButton": {"on": "click", "selector": "#searchTriggerOpen", "vars": {"event_action": "open", "event_category": "search", "event_label": "search", "event_name": "search"}}, "sidebarLink": {"on": "click", "selector": ".ap-o-sidebar a", "vars": {"event_action": "link", "event_category": "examples", "event_label": "sidebar", "event_name": "sidebar"}}, "sidebarToggle": {"on": "click", "selector": "label[for=\"sidebar-desktop\"], label[for=\"sidebar\"]", "vars": {"event_action": "toggle", "event_category": "examples", "event_label": "sidebar", "event_name": "sidebar"}}}, "vars": {"config": {"UA-67833617-1": {"groups": "default"}}, "gtag_id": "UA-67833617-1"}}
+  </script>
+</amp-analytics><amp-geo layout="nodisplay">
+  <script type="application/json">
+    {
+      "ISOCountryGroups": {
+        "eu": ["preset-eea"],
+        "doubleOptIn": ["de", "at", "no", "gr", "lu"]
+      }
+    }
+  </script>
+</amp-geo>
+
+<amp-consent id="consent" class="ap-o-consent" layout="nodisplay">
+  <script type="application/json">
+    {
+      "consentInstanceId": "consent",
+      "promptUI": "consent-popup",
+      "consentRequired": false,
+      "geoOverride": {
+        "eu": {
+          "consentRequired": true
+        }
+      }
+    }
+  </script>
+
+  <div id="consent-popup" class="consent-popup">
+    <button type="reset" class="ap-o-consent-close" on="tap:consent.dismiss" role="button" tabindex="0" aria-label="Dismiss consent">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+    </button>
+    <p class="ap-o-consent-text">
+        We use cookies to understand how you use our site and to improve your experience. By continuing to use our site, you accept our <a href="https://policies.google.com/technologies/cookies">use of cookies</a> and <a href="https://policies.google.com/privacy">privacy policy</a>.
+    </p>
+    <button on="tap:consent.accept" class="ap-a-btn" role="button" aria-label="Accept use of cookies">Got it!</button>
+  </div>
+</amp-consent>
+<amp-install-serviceworker src="/serviceworker.js" data-iframe-src="http://localhost:8080/serviceworker.html" layout="nodisplay"></amp-install-serviceworker>  </body>
+</html>
